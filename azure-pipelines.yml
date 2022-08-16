@@ -17,7 +17,7 @@ stages:
 
     variables:
       wwwrootDir: 'Tailspin.SpaceGame.Web/wwwroot'
-      dotnetSdkVersion: '5.x'
+      dotnetSdkVersion: '6.x'
 
     steps:
     - task: UseDotNet@2
@@ -133,8 +133,7 @@ stages:
               azureSubscription: 'Resource Manager - Tailspin - Space Game'
               appName: '$(WebAppNameStaging)'
               package: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/*.zip'
-
-    - job: RunLoadTests
+  - job: RunLoadTests
     dependsOn: Deploy
     displayName: 'Run load tests'
     pool:
