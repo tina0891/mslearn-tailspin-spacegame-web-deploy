@@ -9,6 +9,7 @@ using System.Collections;
 
 namespace UITests
 {
+    //change
     [TestFixture("Chrome")]
     [TestFixture("Firefox")]
     [TestFixture("Edge")]
